@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Changelog · Beta Access{% endblock %}
+{% block content %}
+<h1 class="page-title">Changelog</h1>
+<p class="muted">What shipped recently.</p>
+<ul class="log">
+  {% for v, note in entries %}
+  <li><span class="ver">{{ v }}</span><span>{{ note }}</span></li>
+  {% endfor %}
+</ul>
+{% endblock %}

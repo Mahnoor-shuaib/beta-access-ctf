@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="hero">
+  <div class="hero-text">
+    <p class="eyebrow">Now in private beta</p>
+    <h1>Try tomorrow's features, <span class="accent">today.</span></h1>
+    <p class="lead">Join as a tester, explore the dashboard, and help us shape what ships next.</p>
+    <div class="actions">
+      {% if current_user %}
+        <a class="btn" href="{{ url_for('dashboard') }}">Go to dashboard</a>
+      {% else %}
+        <a class="btn" href="{{ url_for('register') }}">Request access</a>
+        <a class="btn ghost" href="{{ url_for('login') }}">Log in</a>
+      {% endif %}
+    </div>
+  </div>
+  <div class="hero-card" aria-hidden="true">
+    <div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div>
+    <div class="code-line"><span class="k">role</span><span class="c">:</span> <span class="s">"tester"</span></div>
+    <div class="code-line"><span class="k">status</span><span class="c">:</span> <span class="s">"active"</span></div>
+    <div class="code-line"><span class="k">build</span><span class="c">:</span> <span class="s">"v0.9.4"</span></div>
+  </div>
+</section>
+
+<section class="tiles">
+  <article class="tile"><h3>Early builds</h3><p>Get new features before everyone else.</p></article>
+  <article class="tile"><h3>Direct feedback</h3><p>Your reports shape the roadmap.</p></article>
+  <article class="tile"><h3>Tester perks</h3><p>Badges, shout-outs, and a seat at launch day.</p></article>
+</section>
+{% endblock %}

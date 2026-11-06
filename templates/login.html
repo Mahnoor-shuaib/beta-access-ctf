@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Log in · Beta Access{% endblock %}
+{% block content %}
+<section class="panel narrow">
+  <h1>Log in</h1>
+  <p class="muted">Welcome back, tester.</p>
+  <form method="post">
+    <label for="username">Username</label>
+    <input id="username" name="username" autocomplete="username" required autofocus>
+    <label for="password">Password</label>
+    <div class="pw">
+      <input id="password" name="password" type="password" autocomplete="current-password" required>
+      <button type="button" class="toggle" aria-label="Show password" aria-pressed="false">Show</button>
+    </div>
+    <button type="submit" class="btn full">Log in</button>
+  </form>
+  <p class="links">New here? <a href="{{ url_for('register') }}">Request access</a></p>
+</section>
+{% endblock %}

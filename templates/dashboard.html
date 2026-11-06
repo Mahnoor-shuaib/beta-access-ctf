@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Dashboard · Beta Access{% endblock %}
+{% block content %}
+<section class="hero compact">
+  <div class="hero-text">
+    <p class="eyebrow">Tester dashboard</p>
+    <h1>Hey, <span class="accent">{{ current_user }}</span>.</h1>
+    <p class="lead">Role: <strong>{{ current_role }}</strong> &middot; Build: v0.9.4 &middot; Status: active</p>
+  </div>
+</section>
+
+<div class="cols">
+  <section>
+    <h2 class="sec">Your test tracks</h2>
+    <ul class="list">
+      <li><span class="grow">Onboarding flow v2</span><span class="chip">In progress</span></li>
+      <li><span class="grow">Dark mode polish</span><span class="chip">Needs feedback</span></li>
+      <li><span class="grow">Offline sync</span><span class="chip">Not started</span></li>
+    </ul>
+  </section>
+  <section>
+    <h2 class="sec">More</h2>
+    <a class="locked" href="{{ url_for('insider') }}">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      Insider Tools <small>admins only</small>
+    </a>
+  </section>
+</div>
+{% endblock %}

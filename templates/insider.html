@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Insider Tools · Beta Access{% endblock %}
+{% block content %}
+<section class="hero compact">
+  <div class="hero-text">
+    <p class="eyebrow">Admin area</p>
+    <h1>Insider <span class="accent">Tools</span></h1>
+    <p class="lead">Rollout status and internal metrics.</p>
+  </div>
+</section>
+
+<section>
+  <h2 class="sec">Status</h2>
+  <ul class="list">
+    {% for t in tools %}
+    <li><span class="grow">{{ t }}</span></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="vault">
+  <p class="label">Release signing key</p>
+  <p class="key">{{ flag }}</p>
+  <p class="muted">Do not share outside the admin team.</p>
+</section>
+{% endblock %}
